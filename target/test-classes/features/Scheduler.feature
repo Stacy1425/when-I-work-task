@@ -1,6 +1,6 @@
 @scheduler
 Feature:
-  As an existing user, I can create an OpenShift with and without publishing it.
+  As an existing user, I can create an OpenShift with and without publishing it and assign it to an existing employee.
 
   Scenario: Login as user
     Given user is on the login page
@@ -20,5 +20,5 @@ Feature:
     And adds new OpenShift for _08pm
     And openShift is successfully created for 8p 11p
     And edit openShift and publish it for 8p and 11p Kate Smith
-    Then openShift is published and assigned- for Kate Smith at 05pm
+    Then openShift is published for Kate Smith at 8p
     And delete created shift for Kate Smith at 8p and 11p and assigned is true

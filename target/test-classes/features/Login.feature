@@ -10,7 +10,7 @@ Feature:
     Scenario: Login with incorrect email is unsuccessful
     Given user is on the login page
     When user enters wrong email
-    Then  email error appears
+    Then email error appears
 
   Scenario: Login with incorrect password is unsuccessful
     Given user is on the login page

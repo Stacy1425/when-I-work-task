@@ -11,7 +11,7 @@ public class LoginStepDefinitions {
     LoginPage loginPage = new LoginPage();
 
     @Given("user is on the login page")
-    public void user_is_on_the_login_page() throws InterruptedException{
+    public void user_is_on_the_login_page() {
         System.out.println("user is on the login page");
         String url = ConfigurationReader.getProperty("url");
         Driver.getDriver().get(url);

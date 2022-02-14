@@ -13,26 +13,12 @@ public class SchedulerPage {
     DashboardPage dashboardPage = new DashboardPage();
 
     //----------ELEMENTS
-    @FindBy(xpath = "//div[@id='schedule-select-container']//child::div[contains(@class, 'Select__indicators css-1wy0on6')]")
-    public WebElement addShiftArrow;
-
-    @FindBy(xpath = "//div[text()='+ Add Schedule']")
-    public WebElement addPlusScheduleBtn;
-
-    @FindBy(xpath = "//a[text()='Shift Templates']")
-    public WebElement shiftTemplatesBtn;
-
-    @FindBy(xpath = "//div[text()='Add Shift Template']")
-    public WebElement addShiftTemplateBtn;
 
     @FindBy(xpath = "//input[contains(@class, 'time-picker-input')]")
     public WebElement timeBox;
 
     @FindBy(xpath = "//div[text()='Create Custom Shift']")
     public WebElement createCustomShiftBtn;
-
-    @FindBy(xpath = "//p[text()='There are currently no OpenShifts within this date range.']")
-    public WebElement noOpenShiftsText;
 
     @FindBy(xpath = "//div[text()='Save']")
     public WebElement saveWithoutPublishEl;
