@@ -1,11 +1,13 @@
 package taskWhenIwork.pages;
 
-
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import taskWhenIwork.utilities.BrowserUtils;
 
 public class LoginPage extends BasePage {
+
+    //-----ELEMENTS
 
     @FindBy(xpath = "//input[@name='email']")
     public WebElement emailInputBoxElement;
@@ -22,20 +24,22 @@ public class LoginPage extends BasePage {
     @FindBy (xpath = "//button[text()='Logout']")
     public WebElement logoutBtn;
 
+    //-----METHODS
+
     public void login(String email, String password){
         emailInputBoxElement.sendKeys(email);
         passwordInputBoxElement.sendKeys(password, Keys.ENTER);
     }
 
     public void isLoggedIn() {
-        logoutBtn.isDisplayed();
+        BrowserUtils.verifyElementDisplayed(logoutBtn);
     }
 
     public void emailErrorPresent() {
-        emailErrorMessage.isDisplayed();
+        BrowserUtils.verifyElementDisplayed(emailErrorMessage);
     }
 
     public void errorPresent() {
-        errorMessage.isDisplayed();
+        BrowserUtils.verifyElementDisplayed(errorMessage);
     }
 }

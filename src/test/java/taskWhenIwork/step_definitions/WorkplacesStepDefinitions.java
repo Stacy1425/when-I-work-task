@@ -9,7 +9,7 @@ public class WorkplacesStepDefinitions {
 
     @When("clicks on specific workplace {}")
     public void clicks_on_specific_workplace(String workspaceName) {
-        workplacesPage.workspaceName(workspaceName).click();
+        workplacesPage.clickOnSpecificWorkplace(workspaceName);
     }
 
 }

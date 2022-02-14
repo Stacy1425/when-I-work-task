@@ -6,13 +6,17 @@ import org.openqa.selenium.support.FindBy;
 import taskWhenIwork.utilities.BrowserUtils;
 import taskWhenIwork.utilities.Driver;
 
-public class EmployeesPage {
+public class EmployeePage {
 
-    @FindBy(xpath = "//div[contains(@class, 'justify-content-between')]//child::span[text()='Continue']")
-    public WebElement addEmployeeContinueBtn;
+    NavigationBarPage navigationBarPage = new NavigationBarPage();
 
-    @FindBy(xpath = "//span[text()='Add Employees']")
+    //-----ELEMENTS
+
+    @FindBy(xpath = "//div[text()='Add Employee']")
     public WebElement addEmployeeBtn;
+
+    @FindBy(xpath = "//button[@type='submit']//div[contains(text(), 'Employee')]")
+    public WebElement submitAddEmployee;
 
     @FindBy(id = "first_name")
     public WebElement first_name;
@@ -20,19 +24,15 @@ public class EmployeesPage {
     @FindBy(id = "last_name")
     public WebElement last_name;
 
-    @FindBy(xpath = "//div[text()=' Employee']/parent::button[@type='submit']")
-    public WebElement submitAddEmployee;
-
     public WebElement employeeInColumn(String name) {
-        String xpath = "//div[@class='user-info col-2']//div[text()="+name+"]";
+        String xpath = "//div[@class='user-name-info']//div[text()=" + name + "]";
         return Driver.getDriver().findElement(By.xpath(xpath));
     }
 
-    public void clickContinueAddEmployee(){
-        BrowserUtils.waitForClickability(addEmployeeContinueBtn, 1000).click();
-    }
+    //-----METHODS
 
     public void addEmployee(String firstName, String lastName) {
+        navigationBarPage.clickOnEmployeesBtn();
         BrowserUtils.waitForClickability(addEmployeeBtn, 1000).click();
         BrowserUtils.waitForClickability(first_name, 1000).sendKeys(firstName);
         last_name.sendKeys(lastName);

@@ -14,7 +14,7 @@ public class LoginStepDefinitions {
     public void user_is_on_the_login_page() throws InterruptedException{
         System.out.println("user is on the login page");
         String url = ConfigurationReader.getProperty("url");
-        Driver.getDriver().get(url);//to open login page
+        Driver.getDriver().get(url);
         BrowserUtils.wait(1000);
     }
 
@@ -27,7 +27,7 @@ public class LoginStepDefinitions {
     }
 
     @Then("user is logged in")
-    public void user_is_logged_in() throws InterruptedException {
+    public void user_is_logged_in() {
         System.out.println("user is logged in");
         BrowserUtils.wait(1000);
         loginPage.isLoggedIn();
